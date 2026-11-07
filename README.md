@@ -242,6 +242,8 @@ Includes concepts around:
 
 ➡️ [View Kafka notes](kafka/idempotent-consumer/README.md)
 
+For producer-side delivery reliability, see the [Transactional Outbox guide](https://github.com/RohiniNetekal/Microservices-Engineering-Lab/blob/master/docs/transactional-outbox-pattern.md), which complements consumer idempotency.
+
 ---
 
 ## 🎯 Learning Approach
