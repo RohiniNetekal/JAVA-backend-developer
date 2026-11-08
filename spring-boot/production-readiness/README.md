@@ -148,31 +148,26 @@ Never log passwords, tokens, card data, private keys or other sensitive informat
 
 ## 8. Observability
 
-A production service should provide more than logs.
+A production service should provide more than logs. Use three complementary signals:
 
-```text
-                 +----------------+
-Application ---->| Logs           |
-        |        +----------------+
-        |
-        +-------> Metrics
-        |
-        +-------> Traces
-```
+- **Logs:** explain what happened and include safe diagnostic context.
+- **Metrics:** show request rate, error rate, p95/p99 latency, JVM health and dependency saturation.
+- **Traces:** show where one request spent time across application, database, HTTP and messaging boundaries.
 
-Study:
-- Request latency
-- Error rate
-- Throughput
-- Database timing
-- External-call timing
-- JVM memory/GC metrics
-- Distributed tracing
-- OpenTelemetry concepts
+Spring Boot uses Micrometer Observation for metrics and tracing. With Micrometer Tracing configured, trace and span IDs can also correlate log lines.
+
+Implementation walkthrough: [Distributed Tracing and Observability for Spring Boot Microservices](https://github.com/RohiniNetekal/Microservices-Engineering-Lab/blob/master/docs/distributed-tracing-observability.md). It covers OTLP setup, W3C context propagation, custom observations, Kafka producer/consumer observations, asynchronous outbox context, sampling, cardinality and incident triage.
+
+Important production checks:
+- Do not assume JDBC/Oracle spans appear merely because Actuator is present; add and verify compatible datasource instrumentation or an agent.
+- Use auto-configured HTTP client builders when trace propagation is required.
+- Enable Kafka observations on both producer and consumer sides.
+- Keep metric tags low-cardinality and never put secrets or unnecessary personal data in telemetry.
+- Choose sampling deliberately; 100% sampling is for small local exercises, not a universal production setting.
 
 A useful production question is:
 
-> "The API became slow. How do you prove whether the bottleneck is the JVM, database, downstream service or network?"
+> "The API became slow. Can you use metrics to find the affected operation, a trace to locate the slow span, and logs to explain the failure?"
 
 ## 9. Security baseline
 
