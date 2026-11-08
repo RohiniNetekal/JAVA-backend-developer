@@ -37,6 +37,8 @@ Study:
 - Health checks
 - Production debugging
 
+Implementation walkthrough: [Distributed Tracing and Observability for Spring Boot Microservices](https://github.com/RohiniNetekal/Microservices-Engineering-Lab/blob/master/docs/distributed-tracing-observability.md). It covers Micrometer Observation, OpenTelemetry OTLP, trace/log correlation, HTTP and Kafka propagation, asynchronous outbox context, sampling, cardinality and incident triage.
+
 ## 4. Testcontainers
 
 Move beyond only mocks and in-memory databases.
