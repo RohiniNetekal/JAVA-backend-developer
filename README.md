@@ -48,6 +48,7 @@ I use this repository to turn concepts into **small, understandable and intervie
 | Security | Spring Security, authentication, authorization, JWT |
 | Testing | JUnit, Mockito, unit testing, integration testing |
 | DevOps | Git, Docker, CI/CD |
+| Observability | Structured logs, Micrometer metrics, distributed tracing, OpenTelemetry |
 | Cloud | AWS fundamentals |
 | Architecture | Design patterns, SOLID, system design |
 
@@ -243,6 +244,10 @@ Includes concepts around:
 ➡️ [View Kafka notes](kafka/idempotent-consumer/README.md)
 
 For producer-side delivery reliability, see the [Transactional Outbox guide](https://github.com/RohiniNetekal/Microservices-Engineering-Lab/blob/master/docs/transactional-outbox-pattern.md), which complements consumer idempotency.
+
+### Observability — logs, metrics and distributed traces
+
+The [Distributed Tracing and Observability guide](https://github.com/RohiniNetekal/Microservices-Engineering-Lab/blob/master/docs/distributed-tracing-observability.md) connects Spring Boot/Micrometer instrumentation, HTTP and Kafka context propagation, Oracle/JDBC visibility, outbox tracing, sampling, cardinality and incident investigation.
 
 ---
 
