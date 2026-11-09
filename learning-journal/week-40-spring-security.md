@@ -45,3 +45,25 @@ Authentication identifies the caller; authorization checks permissions. Security
 - [ ] All checklist points understood
 - [ ] Example explained without notes
 - [ ] 3 interview questions practiced
+
+## Practical extension — SecurityFilterChain and authorization
+
+For a stateless API that receives bearer tokens in the HTTP Authorization header, Spring Security can configure an OAuth2 Resource Server through a SecurityFilterChain. Do not write a custom JWT filter for the standard bearer-token flow.
+
+Example authorization rules:
+
+~~~java
+.requestMatchers(HttpMethod.GET, "/api/v1/merchants/**")
+    .hasAuthority("SCOPE_merchants.read")
+.requestMatchers(HttpMethod.POST, "/api/v1/merchants/**")
+    .hasAuthority("SCOPE_merchants.write")
+.anyRequest().authenticated()
+~~~
+
+Spring maps OAuth scopes to SCOPE_ authorities by default. This is not the same as an application role such as ROLE_ADMIN.
+
+- 401: the caller is missing or has an invalid token.
+- 403: the token is valid but lacks permission.
+- A valid scope still does not prove ownership of a particular merchant; check tenant/object ownership in the service.
+
+Read the [OAuth2 JWT Resource Server implementation guide](https://github.com/RohiniNetekal/JAVA-backend-developer/blob/main/spring-security/jwt/OAUTH2_RESOURCE_SERVER_IMPLEMENTATION.md) for the complete filter chain, CSRF/CORS distinction, method security, object-level authorization, testing and common mistakes.
