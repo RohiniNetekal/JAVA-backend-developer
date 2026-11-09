@@ -249,6 +249,10 @@ For producer-side delivery reliability, see the [Transactional Outbox guide](htt
 
 The [Distributed Tracing and Observability guide](https://github.com/RohiniNetekal/Microservices-Engineering-Lab/blob/master/docs/distributed-tracing-observability.md) connects Spring Boot/Micrometer instrumentation, HTTP and Kafka context propagation, Oracle/JDBC visibility, outbox tracing, sampling, cardinality and incident investigation.
 
+### Spring Security — OAuth2 JWT Resource Server
+
+The [OAuth2 Resource Server implementation guide](spring-security/jwt/OAUTH2_RESOURCE_SERVER_IMPLEMENTATION.md) demonstrates a modern Spring MVC API that validates externally issued JWT access tokens using issuer, JWKS, audience and algorithm configuration. It covers the security filter chain, scope-to-authority mapping, object-level authorization, 401 vs 403 behavior and the difference between MockMvc authorization tests and real signed-token validation.
+
 ---
 
 ## 🎯 Learning Approach
