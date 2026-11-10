@@ -306,3 +306,10 @@ with enough practical depth to support **Java Backend Developer / Senior Java Ba
 
 
 > **I learn backend concepts by implementing them, documenting the reasoning, testing the ideas, and continuously improving the depth of the work.**
+
+
+## CI/CD and GitHub Actions
+
+The [Week 45 CI/CD reference](learning-journal/week-45-cicd.md) now connects Maven's verify lifecycle, Surefire/Failsafe, Testcontainers, Java version matrices and secure artifact promotion. The detailed [Java backend CI/CD guide](https://github.com/RohiniNetekal/Git-Engineering-Workflow-Lab/blob/main/docs/java-backend-ci-cd.md) includes a reusable workflow template and deployment-security guidance.
+
+The Git workflow repository has an active Markdown quality workflow. The Maven YAML is a template for a real Spring Boot project, not a claim that this documentation-focused repository currently runs a Java build.
